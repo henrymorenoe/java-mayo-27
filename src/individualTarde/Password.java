@@ -1,5 +1,6 @@
 package individualTarde;
 
+import java.util.InputMismatchException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -55,7 +56,12 @@ public class Password {
         Pattern pattern = Pattern.compile(getRegex());
         Matcher matcher = pattern.matcher(pwd);
         boolean matchFound = matcher.find() ;
-        return matchFound;
+        if (matchFound){
+            return matchFound;
+        }else {
+            throw new InputMismatchException("No es una password valida segun los estandares definidos en la RegEx");
+        }
+
     }
 
 

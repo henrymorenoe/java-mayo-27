@@ -1,5 +1,7 @@
 package individualTarde;
 
+import java.util.InputMismatchException;
+
 public class testPassword {
 
     public static void main(String[] args) {
@@ -15,10 +17,26 @@ public class testPassword {
         System.out.println("Test 2: validar la regex con setValue()");
         testSetValueAgainstRegex(myPassword, "myPassword*123", true);
         // fails cases
-        testSetValueAgainstRegex(myPassword, "mypassword", false);
+        try {
+            testSetValueAgainstRegex(myPassword, "mypassword", false);
+        } catch (InputMismatchException e){
+            //e.printStackTrace();
+            System.out.println("  Error del InputMismatchException customizado:: "+e.getLocalizedMessage());
+            if(e.getLocalizedMessage() == "No es una password valida segun los estandares definidos en la RegEx")
+            {   System.out.println("--- OK --- green ");
+            }else {
+                System.out.println("--- Red --- !!! ");
+            }
+
+        }
+
+
+
 
     }
 
+
+    // Auxiliar methods: to test .. etc ..
 
     private static void testSetValueAgainstRegex(Password myPassword, String pwdToTest, boolean isEquals) {
         boolean hasSetValue =  myPassword.setValue(pwdToTest);
