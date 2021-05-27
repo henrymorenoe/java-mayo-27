@@ -7,6 +7,7 @@ public class CuentaCorriente {
         // Constructors
         public CuentaCorriente(String numeroCuenta){
             boolean hasBeenSetNumeroCuenta =  setNumeroCuenta(numeroCuenta);
+            this.saldo = 0;
             if(!hasBeenSetNumeroCuenta)
                 System.out.println("ERROR en metodo setNumeroCuenta :: " + hasBeenSetNumeroCuenta);
         }
@@ -18,7 +19,8 @@ public class CuentaCorriente {
             /** validaciones: Diferente de 0; cantidad maxima
              **/
             try {
-                this.saldo = this.saldo + monto;
+                setSaldo(this.saldo + monto);
+                //System.out.println("despues de sumar en ingreso a saldo es: :" + this.saldo );
                 return true;
             } catch (Exception e){
                 return false;
@@ -37,6 +39,23 @@ public class CuentaCorriente {
         }catch (Exception e){
             return false;
         }
+    }
+
+    public boolean setSaldo(Integer monto){
+            // TODO
+        /**
+         * Validaciones ... no null, maximo ...
+         * **/
+            this.saldo = monto;
+            return true;
+    }
+
+    public Integer getSaldo(){
+            //TODO
+        /**
+         * validar algun tipo de password para Autenticar ...
+         * **/
+        return this.saldo;
     }
 
 }
