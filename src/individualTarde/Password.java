@@ -19,7 +19,9 @@ public class Password {
         setRegex(regEx);
     }
 
+    public Password(){
 
+    }
     // Getters and Setters
 
     private void setRegex(String regEx) {

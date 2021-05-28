@@ -21,11 +21,11 @@ public class testPassword {
             testSetValueAgainstRegex(myPassword, "mypassword", false);
         } catch (InputMismatchException e){
             //e.printStackTrace();
-            System.out.println("  Error del InputMismatchException customizado:: "+e.getLocalizedMessage());
+            System.out.println("  ->Error del InputMismatchException customizado:: "+e.getLocalizedMessage());
             if(e.getLocalizedMessage() == "No es una password valida segun los estandares definidos en la RegEx")
-            {   System.out.println("--- OK --- green ");
+            {   System.out.println("  -> --- OK --- green ");
             }else {
-                System.out.println("--- Red --- !!! ");
+                System.out.println("  -> --- Red --- !!! ");
             }
 
         }
