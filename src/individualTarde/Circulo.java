@@ -8,8 +8,21 @@ public class Circulo extends FiguraGeometrica{
        - Solucion: sobreescribir el metodo abracto heredado de FiguraGeometrica
       */
 
+    private double radio = 0;
+
     @Override
     public double area() {
-        return 0;
+        return Math.PI * Math.pow(getRadio(), 2);
+    }
+
+
+    // Setters and Getters
+
+    public void setRadio(double radio) {
+        this.radio = radio;
+    }
+
+    public double getRadio() {
+        return radio;
     }
 }

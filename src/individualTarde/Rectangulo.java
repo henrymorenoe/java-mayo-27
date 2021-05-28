@@ -1,8 +1,12 @@
 package individualTarde;
 
 public class Rectangulo extends FiguraGeometrica{
+
+    private double base = 0;
+    private  double altura = 0;
+
     @Override
     public double area() {
-        return 0;
+        return (base*altura)/2;
     }
 }
