@@ -2,19 +2,15 @@ package individualTarde;
 
 public class PasswordFuerte extends Password{
 
-    /**
-     * - cifrar y saltear password;
-     * - no guardar plana
-     * - NO manipular en distintos lugares lo posible este tipo de informacion
-     *
-     * @param regEx
+    private String regEx = "^(?=.*\\d)(?=.*[\\u0021-\\u002b\\u003c-\\u0040])(?=.*[A-Z])(?=.*[a-z])\\S{8,16}$";
 
-    public PasswordFuerte(String regEx) {
-        super(regEx);
-    }    */
 
     public PasswordFuerte(){
 
     }
 
+    @Override
+    public String getRegex() {
+        return this.regEx;
+    }
 }

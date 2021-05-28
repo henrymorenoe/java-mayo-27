@@ -6,8 +6,8 @@ import java.util.regex.Pattern;
 
 public class Password {
 
-    private String regEx;
-    private String pwd; /**
+    private String regEx = "";
+    private String pwd = ""; /**
      - cifrar y saltear password;
      - no guardar plana
      - NO manipular en distintos lugares lo posible este tipo de informacion
